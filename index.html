@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="mdlcop.index">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Ejemplo Mobile App Maestría Tec</title>
+
+       
+  </head>
+    
+  <body style="background-color: black;" ng-strict-di> 
+      <app id="spinnerContainer" style="text-align: center;">
+        <article>
+					<img src="img/2/logo.png" class="logo-gavar-slider" style="width: 300px; position: absolute; right: calc(50% - 150px); top: calc(50% - 70px);"/>
+						<div id="back-canvas"><canvas id="c"></canvas>
+						</div>
+        </article>
+        
+  
+      </app>
+
+    <div id="secondControllerId" style="width: 100%; height: 100%; display: none;" ng-controller="secondController">
+
+      
+      
+      
+
+                  <!-- ******************************************************************* NEW HTML *********************************************************** -->
+                  <div style="width: 100%; height: 100%;">
+                      <header style="min-height: 56px;">
+                        <div id="menuIcon" class="icon hamburger-icon" style="display: none;" sidebarjs-toggle></div>
+                        <h1>{{trTitle}}</h1>
+                 
+                      </header>
+
+
+                      <sidebarjs
+                        on-close="onSidebarClose()"
+                        on-open="onSidebarOpen()"
+                        on-change-visibility="onSidebarChangeVisibility($event)">
+
+                        
+                        <div style="position: absolute !important; background-color: transparent !important; width: 100%;
+                          text-align: center;
+                          color: white;
+                          font-size: 11px;
+                          min-height: 70px;
+                          padding-top: 92px;
+                          top: 0px;">Mi primer App <br> Maestría Tec</div>
+                          
+                        <img src="img/police-menu.jpg" style="width: 100%;">
+
+                        <img src="img/logo.png" class="logo-menu">
+
+                        <nav style="height: 100%;">
+                          <div id="menuContainer">
+
+                            <!--
+                            <div class="">
+                              <div ng-click="getFirstMenu('inicio')" class="div-button-menu">
+                                <div class="menu-text-container">INICIO</div><div class="icon-container"><i class="fas fa-angle-right fa-2x"></i></div>
+                              </div>
+                            </div>
+                            -->
+
+
+
+
+
+                            <div id="menuContainerSecond">
+                              <div class="" ng-repeat="menu in dataMenu">
+                                <div ng-click="getFirstMenu(menu.Id, menu.Texto)" class="div-button-menu">
+                                  <div class="menu-text-container">{{menu.Texto}}</div><div class="icon-container"><i class="fas fa-angle-right fa-2x"></i></div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+
+                            <div class="">
+                              <!--<div ng-click="getFirstMenu('inicio')" class="btn menu-element" target=""><i class="fas fa-home fa-2x"></i> INICIO</div>-->
+                              <div ng-click="goToAbout('menu')" class="div-button-menu">
+                                <div class="menu-text-container"><i class="fas fa-hand-holding-usd fa-2x"></i> OPCIÓN MENÚ</div><div class="icon-container"><i class="fas fa-angle-right fa-1x"></i></div>
+                              </div>
+                            </div>
+
+                        
+
+                           </div>
+                         
+                        </nav>
+
+                        <div class="div-menu-bottom" ng-click="goToAbout('menu')">
+                          <h5 style="font-size: 11px !important; margin-top: 3px !important; margin-bottom: 3px !important;"><i class="fas fa-copyright fa-xs"></i> Maestría <br>Tecnológico de Zacatecas</h5>
+                          <img src="img/andysoft.png" style="width: 160px; margin-bottom: 2px;">
+                        </div>
+                      </sidebarjs>
+
+                  
+
+                      <main class="main">
+                        <div id="sectionHome" class="main-index div-container-index text-center">
+                          <div class="modal-header">
+                             
+                            </div>
+                            <div class="modal-body-index">
+
+                      
+                              
+                            </div>
+
+                           
+
+                            <h4 class="modal-title text-proteger-servir">¡BIENVENIDO!</h4>
+                        </div>
+
+                        <div id="section1" style="padding-top: 30%;" class="div-container-index secondary-section second-section"></div>
+
+                        <div id="section1Child" style="padding-top: 30%;" class="secondary-section second-section" style="display:none;"></div>
+
+
+
+             
+
+                        <div id="section3" class="div-container-index secondary-section">3</div>
+                        <div id="section4" class="div-container-index secondary-section">4</div>
+                        <div id="section5" class="div-container-index secondary-section">5</div>
+
+
+
+
+
+                      
+                      <footer>
+                        <div class="footer-container" style="overflow-y: auto;">
+                          <div id="homeIcon" class="element-second" ng-click="GoToHome()">
+                            <i class="fas fa-home fa-2x"></i>
+                          </div>
+                          <div id="calculatorIcon" class="element-second" ng-click="goToCalculatorPrevius()">
+                            <i class="fas fa-calculator fa-2x"></i>
+                          </div>
+                          <div id="emailIcon" class="element-second" ng-click="goToSendMailGeneral()">
+                            <!--<a href="mailto:rgarciav@gavar.com.mx">-->
+                              <i class="fas fa-envelope fa-2x"></i>
+                            <!--</a>-->
+                          </div>
+                          <div id="aboutIcon" class="element-second" ng-click="goToAbout()">
+                            <i class="fas fa-address-book fa-2x"></i>
+                          </div>
+                          
+                          <div id="aboutIcon" class="element-second" ng-click="goToAbout()">
+                            <i class="fas fa-file-alt fa-2x"></i>
+                          </div> 
+                          <div id="aboutIcon" class="element-second" ng-click="goToAbout()">
+                            <i class="fas fa-question-circle fa-2x"></i>
+                          </div> 
+                          <div id="aboutIcon" class="element-second" ng-click="goToAbout()">
+                            <i class="fas fa-briefcase fa-2x"></i>
+                          </div>
+
+                          <div id="aboutIcon" class="element-second" ng-click="goToAbout()">
+                            <i class="fab fa-adversal fa-2x"></i>
+                          </div>
+                          
+                        </div>
+                      </footer>
+
+
+
+
+                  </div>
+
+
+
+                    
+
+                      
+                      <div id="modalStart" class="modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <button type="button" class="close" ng-click="closeModalContact()" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <!--<div class="modal-header">
+                              <h4 class="modal-title">Contactar a</h4>
+                            
+                            </div>-->
+                            <div class="modal-body">
+
+                              <div class="text-center">
+                                <form action="">
+
+                                  <!--
+                                  <label for="country">Seleccione un estado</label>
+                                  <select id="country" name="country">
+                                    <option value="australia" selected>Zacatecas</option>
+                                  </select>-->
+                                  <label for="nombreMailDos">Nombre</label>
+                                  <input type="text" id="nombreMailDos" name="nombremaildos" class="" placeholder="Su nombre...">
+
+                                  <label for="emailMailDos">E-mail</label>
+                                  <input type="text" id="emailMailDos" name="mailemaildos" class="" placeholder="Su E-mail...">
+
+                                  <label for="telefonoMailDos">Teléfono / Celular</label>
+                                  <input type="text" id="telefonoMailDos" name="telefonomaildos" class="" placeholder="Su teléfono o celular...">
+
+                                  <label for="asuntomailDos">Asunto</label>
+                                  <input type="text" id="asuntomailDos" name="lastnamedos" class="" placeholder="Asunto del mensaje...">
+
+                                  <label for="cuerpomensajeDos">Mensaje</label>
+                                  <textarea id="cuerpomensajeDos" name="cuerpomensajedos" class="regular-text-area" placeholder="Escriba aquí el cuerpo del E-mail..." style="height:200px"></textarea>
+
+                                  <input class="btn-principal text-center" value="Enviar" ng-click="sendingMailDespacho()">
+
+                                </form>
+                              </div>
+
+                            
+                              </div>
+                        </div>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+     
+                      
+
+                      <style>
+                        .main-index{
+                          width: 100%;
+                          height: 100%;
+                          top: 56px;
+                          background-image: url(img/background-start.jpg);
+                          /*background-position: right bottom, left top;
+                          background-repeat: no-repeat, repeat;*/
+                          /*background-position: left;*/
+                          background-size: 100%;
+                        }
+
+                        .main{
+                          width: 100%;
+                          height: calc(100% - 100px);
+                        }
+
+                        .second-section{
+                          width: 100%;
+                          height: 100%;
+                          background-image: url(img/2level.jpg);
+                          /*background-position: right bottom, left top;*/
+                          background-repeat: no-repeat, repeat;
+                          background-position: left;
+                          overflow-x: auto;
+                        }
+                        
+                      </style>
+
+                  <!-- ******************************************************************* NEW HTML *********************************************************** -->
+
+    </div> 
+
+
+   
+
+    <!--
+    <script type="text/javascript" src="cordova.js"></script>
+    -->
+
+    <link rel="stylesheet" href="dist/angular-sidebarjs.css">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="libs/bootstrap337.min.css"> 
+
+
+
+
+    <!--
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
+    -->
+      
+    <script>
+      var c = document.getElementById("c");
+      var ctx = c.getContext("2d");
+
+      //faz o canvas full screen
+      c.height = window.innerHeight;
+      c.width = window.innerWidth;
+
+      //caracteresDaChuva
+      var caracteresDaChuva = "0 1";
+      //converte a string em um array de caracteres unicode
+      caracteresDaChuva = caracteresDaChuva.split("");
+
+      var font_size = 20;
+      var columns = c.width/font_size; //numero de colunas da chuva.
+
+      //an array of drops - one per column
+      var drops = [];
+      //x below is the x coordinate
+      //1 = y co-ordinate of the drop(same for every drop initially)
+      for(var x = 0; x < columns; x++)
+        drops[x] = 1; 
+
+      //drawing the characters
+      function draw()
+      {
+        //Black BG for the canvas
+        //translucent BG to show trail
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; 
+    
+    /*	ctx.fillStyle = "rgba(144, 144, 144, 0.05)"; */
+
+        ctx.fillRect(0, 0, c.width, c.height);
+        
+      //	ctx.fillStyle = "#0F0"; //green text 
+        ctx.fillStyle = "#00bec1";
+
+        ctx.font = font_size + "px arial";
+        //looping over drops
+        for(var i = 0; i < drops.length; i++)
+        {
+          //a random chinese character to print
+          var text = caracteresDaChuva[Math.floor(Math.random()*caracteresDaChuva.length)];
+          //x = i*font_size, y = value of drops[i]*font_size
+          ctx.fillText(text, i*font_size, drops[i]*font_size);
+          
+          //sending the drop back to the top randomly after it has crossed the screen
+          //adding a randomness to the reset to make the drops scattered on the Y axis
+          if(drops[i]*font_size > c.height && Math.random() > 0.975)
+            drops[i] = 0;
+          
+          //incrementing Y coordinate
+          drops[i]++;
+        }
+      }
+
+      setInterval(draw, 33);
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <script defer src="libs/font-awsome.js"></script>
+
+
+
+ 
+    <script src="jquery133.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="libs/bootstrap337.min.js"></script>
+
+
+    <script src="angular167.min.js"></script>
+
+    <!--
+    <script src="js/calculadora.controller.js"></script>
+    -->
+
+    <link rel="stylesheet" href="demo.css">   
+    
+    
+    <script src="dist/angular-sidebarjs.js"></script>
+
+
+    <script src="libs/moment.min.js"></script>
+
+
+
+     <!-- CALCULADORA -->
+
+    <!--<link rel="stylesheet" href="libs/jquery12.css"> 
+    <script src="libs/jquery112-ui.js"></script>-->
+    
+<!--
+    <link href="css/font-awesome.min.css" rel="stylesheet">-->
+   
+   <!-- CALENDARIO RARO
+    <link rel="stylesheet" href="css/main.css">
+    <link href="css/cuppa-datepicker-styles.css" rel="stylesheet">
+    <script type="text/javascript" src="libs/cuppa-calendar.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/locale/af.js"></script>
+    -->
+
+
+    <!--
+     <script src="libs/angular-bind-html-compile.min.js"></script>-->
+<!--
+    <script src="js/main.service.js"></script>-->
+
+    <script src="demo.js"></script>
+
+    
+
+  </body>
+</html>

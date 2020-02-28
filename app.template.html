@@ -1,0 +1,284 @@
+<div style="width: 100%; height: 100%;">
+    <header>
+      <div class="icon hamburger-icon" sidebarjs-toggle></div>
+      <h1>{{app.trTitle}}</h1>
+      <!--
+      <div class="icon hamburger-icon" sidebarjs-toggle="mySecondSidebarJS"></div>
+      -->
+    </header>
+
+    <sidebarjs
+      on-close="app.onSidebarClose()"
+      on-open="app.onSidebarOpen()"
+      on-change-visibility="app.onSidebarChangeVisibility($event)">
+
+      
+      <div style="position: absolute !important; background-color: transparent !important; width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 12px;
+        min-height: 150px;
+        padding-top: 130px;
+        top: 0px;">MIS DERECHOS LABORALES COMO <br> OFICIAL DE POLICIA</div>
+        
+      <img src="img/police-menu.jpg" style="width: 100%;">
+
+      <img src="img/logo.png" class="logo-menu">
+
+      <nav style="height: 100%;">
+        <div id="menuContainer">
+
+          <div class="">
+            <!--<div ng-click="app.getFirstMenu('inicio')" class="btn menu-element" target=""><i class="fas fa-home fa-2x"></i> INICIO</div>-->
+            <div ng-click="app.getFirstMenu('inicio')" class="div-button-menu">
+              <div class="menu-text-container">INICIO</div><div class="icon-container"><i class="fas fa-angle-right fa-2x"></i></div>
+            </div>
+          </div>
+
+
+          <div id="menuContainerSecond"></div>
+
+          <!--<a sidebarjs-toggle href="" target="_blank"><div class="img wiki"></div>Especiales como Policía</a>
+          <a sidebarjs-toggle href="" target="_blank"><div class="img wiki"></div>Funciones, uso de la Fuerza y carrera Policial</a>-->
+        </div>
+        <!--
+        <div>
+          <a sidebarjs-toggle href="https://github.com/SidebarJS/angular-sidebarjs/blob/master/README.md" target="_blank"><div class="img wiki"></div>Menu 4</a>
+          <a sidebarjs-toggle href="https://github.com/SidebarJS/angular-sidebarjs/issues" target="_blank"><div class="img bugs"></div>Menu 5</a>
+        </div>
+        -->
+      </nav>
+
+      <div class="div-menu-bottom" ng-click="app.goToAbout()">
+        <h5><i class="fas fa-copyright fa-xs"></i> GAVAR & ASOCIADOS S.C.<br>Lic. Ricardo García Valencia</h5>
+      </div>
+    </sidebarjs>
+
+    <!--
+    <sidebarjs
+      sidebarjs-name="mySecondSidebarJS"
+      sidebarjs-config="{position: 'right'}"
+      on-close="app.onSidebarClose()"
+      on-open="app.onSidebarOpen()"
+      on-change-visibility="app.onSidebarChangeVisibility($event)">
+      <h3>My Second SidebarJS</h3>
+      <nav>
+        <div>
+          <a sidebarjs-toggle href="https://github.com/SidebarJS/angular-sidebarjs" target="_blank"><div class="img github"></div>Github</a>
+          <a sidebarjs-toggle href="https://www.npmjs.com/package/angular-sidebarjs" target="_blank"><div class="img npm"></div>npm</a>
+          <a sidebarjs-toggle href="https://github.com/lorenzodianni" target="_blank"><div class="img author"></div>Author</a>
+        </div>
+        <div>
+          <a sidebarjs-toggle href="https://github.com/SidebarJS/angular-sidebarjs/blob/master/README.md" target="_blank"><div class="img wiki"></div>Wiki</a>
+          <a sidebarjs-toggle href="https://github.com/SidebarJS/angular-sidebarjs/issues" target="_blank"><div class="img bugs"></div>Bugs</a>
+        </div>
+      </nav>
+    </sidebarjs>
+    -->
+
+    <main class="main">
+      <div id="sectionHome" class="main-index div-container-index">
+        <div class="modal-header">
+            <!--<h3 class="modal-title">Bienvenido a</h3>-->
+           <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>-->
+          </div>
+          <div class="modal-body">
+
+            <div style="position: relative;">
+              <label for="stateSelect" style="color: white;">Seleccione un estado</label>
+              <div class="icon-select"><i class="fas fa-angle-down fa-2x"></i></div>
+              <!--
+              <select class="angular-style-input-montemayor" id="stateSelect" onchange="getMenuDatas()" name="country">
+              </select>
+              -->
+              <select ng-model="selectedCar">
+                <option ng-repeat="x in datasStates" value="{{x.Id}}">{{x.Text}}</option>
+              </select>
+
+            </div>
+
+            <!--
+            <select id="stateSelect" ng-model="app.valueSelect" ng-change="app.getMenuDatas()">
+              <option ng-repeat="v in app.datasStates" value="{{v.Id}}" ng-selected="v == app.valueSelect">{{ v.Texto }}</option>
+            </select>  
+            -->
+            
+          </div>
+
+          <!--
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="app.getMenuDatas()">Continuar</button>
+          </div>
+          -->
+
+          <h4 class="modal-title text-proteger-servir">¡MI ORGULLO, PROTEGER Y SERVIR!</h4>
+      </div>
+
+      <div id="section1" class="div-container-index secondary-section second-section"></div>
+
+      <div id="section1Child" class="secondary-section second-section" style="display:none;"></div>
+
+
+
+      <div id="section2" class="div-container-index secondary-section">
+          <img src="img/generales.jpg" style="width: 100%; margin-bottom: 10px;">
+
+          <div class="list-group" data-ng-repeat="third in app.dataThird">
+            <a href="#" class="list-group-item-lm" style="padding: 14px !important;">
+              <!--<h4 class="list-group-item-heading">List group item</h4>-->
+              <i class="fas fa-check fa-lg"></i> <p class="list-group-item-text">{{third.Texto}}</p>
+            </a>
+          </div>
+
+      </div>
+
+      <div id="section3" class="div-container-index secondary-section">3</div>
+      <div id="section4" class="div-container-index secondary-section">4</div>
+      <div id="section5" class="div-container-index secondary-section">5</div>
+
+      <div id="sendMail" class="div-container-index secondary-section send-mail">
+        
+        <div class="container text-center">
+          <form action="">
+
+            <!--
+            <label for="country">Seleccione un estado</label>
+            <select id="country" name="country">
+              <option value="australia" selected>Zacatecas</option>
+            </select>-->
+
+            <label for="asuntomail">Asunto</label>
+            <input type="text" id="asuntomail" name="lastname" class="angular-lorenzo-montemayor" placeholder="Asunto del mensaje...">
+
+            <label for="cuerpomensaje">Mensaje</label>
+            <textarea id="cuerpomensaje" name="cuerpomensaje" class="regular-text-area" placeholder="Escriba aquí el cuerpo del E-mail..." style="height:200px"></textarea>
+
+            <input class="btn-principal text-center" value="Enviar" ng-click="app.sendMail()">
+
+          </form>
+        </div>
+      </div>
+
+
+
+
+      <div id="sectionAbout" class="div-container-index secondary-section">
+        <img src="img/abogado.jpg" style="width: 100%;">
+
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container text-center">
+            <h3 class="display-4">GAVAR & ASOCIADOS S.C.</h3>
+            <p class="lead">No somos los únicos, pero si los mejores especialistas</p>
+            <p class="lead"><a href="mailto:rgarciav@gavar.com.mx">Email: rgarciav@gavar.com.mx</a></p>
+            <p class="lead"> <a href="tel:+4921940363">Tel: 01 (492) 194 03 63</a></p>
+            <br><p class="lead text-center">Si deseas que tu despacho aparezca aquí contactanos</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="sectionCalculator" class="div-container-index secondary-section">
+        
+        <iframe src="http://gavar.com.mx/app/" style="width: 100%; height: 100%;"></iframe>
+
+      </div>
+      <!--
+      <section>
+        <h2>Contenido de la App Android</h2>
+        <p>Left is open: {{app.isVisibleSidebarJS()}}</p>
+        <p>Right is open: {{app.isVisibleSidebarJS("mySecondSidebarJS")}}</p>
+      </section>
+      -->
+
+      <!--
+      <div class="app__js-toggle-buttons">
+        <div class="app__js-toggle-button" ng-click="app.toggleSidebarJS()">Toggle left via js</div>
+        <div class="app__js-toggle-button" ng-click="app.toggleSidebarJS('mySecondSidebarJS')">Toggle right via js</div>
+      </div>
+      -->
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div id="homeIcon" class="element-second" ng-click="app.GoToHome()">
+          <i class="fas fa-home fa-2x"></i>
+        </div>
+        <div id="calculatorIcon" class="element-second" ng-click="app.goToCalculator()">
+          <i class="fas fa-calculator fa-2x"></i>
+        </div>
+        <div id="emailIcon" class="element-second" ng-click="app.goToSendMail()">
+          <!--<a href="mailto:rgarciav@gavar.com.mx">-->
+            <i class="fas fa-envelope fa-2x"></i>
+          <!--</a>-->
+        </div>
+        <div id="aboutIcon" class="element-second" ng-click="app.goToAbout()">
+          <i class="fas fa-address-book fa-2x"></i>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+</div>
+
+
+
+
+    <!--
+    <div id="modalStart" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+          <h3 class="modal-title">Bienvenido a</h3>
+           
+          </div>
+          <div class="modal-body">
+
+            <label for="stateSelect" style="color: white;">Seleccione un estado</label>
+            <select id="stateSelect" name="country">
+              
+              
+            </select>
+            <br><br><br><br>
+            <h4 class="modal-title" style="color: white;">¡MI ORGULLO, PROTEGER Y SERVIR!</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="app.getMenuDatas()">Continuar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+
+    
+
+
+    <style>
+      .main-index{
+        width: 100%;
+        height: 100%;
+        top: 56px;
+        background-image: url(img/background-start.jpg);
+        /*background-position: right bottom, left top;
+        background-repeat: no-repeat, repeat;*/
+        /*background-position: left;*/
+        background-size: 100%;
+      }
+
+      .main{
+        width: 100%;
+        height: calc(100% - 100px);
+      }
+
+      .second-section{
+        width: 100%;
+        height: 100%;
+        background-image: url(img/2level.jpg);
+        /*background-position: right bottom, left top;*/
+        background-repeat: no-repeat, repeat;
+        background-position: left;
+        overflow-x: auto;
+      }
+    </style>

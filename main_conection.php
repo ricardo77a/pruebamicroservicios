@@ -2,9 +2,9 @@
 
 
 define('HOST', 'localhost');
-define('USER', 'root');
+define('USER', 'usuario');
 define('BD', 'microservicios');
-define('PASS', '');
+define('PASS', 'password');
 
 class Database
 

@@ -8,7 +8,7 @@
 	$postdata = file_get_contents('php://input');
 	$obj = json_decode($postdata);
 
-	header('Content-Type: application/jsoin;charset=UTF-8');
+	header('Content-Type: application/json;charset=UTF-8');
 
 	$action = call_user_func('getUserDatas', $obj);
 

@@ -2,9 +2,9 @@
 
 
 define('HOST', 'localhost');
-define('USER', 'ubuntu');
+define('USER', 'root');
 define('BD', 'microservicios');
-define('PASS', '123qwe');
+define('PASS', '');
 
 class Database
 

@@ -28,7 +28,7 @@
 
 			return $data;
 		}catch (PDOException $errMSG){
-			return $errMSG;
+			return 'tienes un error';
 		}
 	}
  ?>

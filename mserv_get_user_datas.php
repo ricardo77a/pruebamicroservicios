@@ -20,7 +20,7 @@
 	function getUserDatas($obj){
 		try {
 			$dbc = Database::Conectar();
-			$sql = 'SELECT * FROM Usuarios';
+			$sql = 'SELECT * FROM usuarios';
 			$stmt = $dbc->prepare($sql);
 			$stmt->execute();
 
